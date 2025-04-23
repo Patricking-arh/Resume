@@ -320,6 +320,19 @@ h1, h2, h3, h4, h5, h6 {
   transition: var(--transition-fast);
 }
 
+/* 汉堡菜单按钮激活状态 */
+.menu-toggle.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
 .nav-links {
   display: flex;
   gap: var(--spacing-md);
@@ -453,6 +466,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .hero-text {
   max-width: 540px;
+  z-index: 1;
 }
 
 .welcome-text {
@@ -2021,6 +2035,25 @@ footer {
 .scroll-top:hover {
   transform: translateY(-5px);
 }
+
+
+
+/* ===== SECTION HIGHLIGHT ===== */
+/* .section-highlight {
+  animation: highlight-pulse 3s ease-in-out;
+}
+
+@keyframes highlight-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(44, 106, 228, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 20px rgba(44, 106, 228, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(44, 106, 228, 0);
+  }
+} */
 
 /* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 1200px) {

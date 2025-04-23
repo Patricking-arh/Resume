@@ -58,7 +58,7 @@
                     <div class="hero-wrapper">
                         <div class="hero-content">
                             <div class="hero-text">
-                                <span class="welcome-text animate__animated animate__fadeIn">欢迎访问我的个人简历</span>
+                                <span class="welcome-text animate__animated animate__fadeIn">欢迎访问我的个人主页</span>
                                 <h1 class="animate__animated animate__fadeInUp">马<span>祥</span></h1>
                                 <div class="title-container animate__animated animate__fadeInUp animate__delay-1s">
                                     <h2 class="title-text">产品经理</h2>
@@ -73,9 +73,9 @@
                                     <span class="tag-separator">|</span>
                                     <span class="tag-item"> 战略落地与数字化赋能，助力业务增长</span>
                                 </p>
-                                <div class="cta-buttons animate__animated animate__fadeInUp animate__delay-3s">
+                                <div class="cta-buttons animate__animated animate__fadeInUp animate__delay-2s">
                                     <a href="#contact" class="btn primary-btn">联系我 <i class="fas fa-arrow-right"></i></a>
-                                    <a href="#experience" class="btn secondary-btn">查看经历 <i class="fas fa-briefcase"></i></a>
+                                    <a href="#experience" class="btn secondary-btn" id="view-experience-btn">查看经历 <i class="fas fa-briefcase"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -443,7 +443,7 @@
                                 </div>
                                 <div class="project-card-back">
                                     <ul class="achievement-list">
-                                        <li>资源整合突破：从0-1设计SaaS化机构管理平台，集成机构准入评估、合作分润、资源库共享等模块，3个月内签约16家战略合作机构，沉淀200+高净值商业资源（背景提升/科研项目等），支撑营收增长35%</li>
+                                        <li>资源整合突破：从0-1设计SaaS化机构管理平台，集成机构准入评估、合作分润、资源库共享等模块，3个月内签约16家的合作机构，沉淀200+高净值商业资源（背景提升/科研项目等），支撑营收增长35%</li>
                                         <li>智能匹配引擎：开发基于LBS定位的机构-学生匹配系统，结合需求标签库（学术水平/预算/国家偏好）实现精准资源对接，机构服务响应时效从72小时缩短至4小时</li>
                                     </ul>
                                 </div>
@@ -765,12 +765,14 @@
 
     <script src="script.js"></script>
     <script>
-        // 页面加载完成后立即执行筛选功能
-        document.addEventListener('DOMContentLoaded', function() {
-            // 确保页面加载后首先显示"全部"项目
-            setTimeout(function() {
+        // 页面完全加载后（包括图片和资源）
+        window.addEventListener('load', function() {
+            console.log('页面完全加载完成，执行初始化');
+            
+            // 确保首先显示"全部"项目
+            if (typeof filterProjects === 'function') {
                 filterProjects('all');
-            }, 500); // 延迟500毫秒执行，确保DOM完全加载
+            }
         });
     </script>
 </body>
